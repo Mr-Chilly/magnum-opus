@@ -1,4 +1,4 @@
-~A site dedicated to pulling resources together to work towards a global legalisation of all drugs~
+_A site dedicated to pulling resources together to work towards a global legalisation of all drugs_
 
 
 # Mission Statement
