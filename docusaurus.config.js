@@ -10,9 +10,9 @@ module.exports = {
   favicon: 'img/favicon.ico',
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Magnum Opus',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Magnum opus logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -22,9 +22,8 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Mr-Chilly/magnum-opus',
           label: 'GitHub',
           position: 'right',
         },
