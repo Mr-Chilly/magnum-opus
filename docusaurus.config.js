@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://mr-chilly.github.io/magnum-opus/',
   projectName: 'magnum-opus',
   organizationName: 'mr-chilly',
-  baseUrl: '/magnum-opus/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
