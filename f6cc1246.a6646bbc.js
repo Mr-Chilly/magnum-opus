@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{94:function(a){a.exports=JSON.parse('{"allTagsPath":"/magnum-opus/blog/tags","slug":"hola","name":"hola","count":1,"permalink":"/magnum-opus/blog/tags/hola"}')}}]);
