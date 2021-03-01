@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{89:function(o){o.exports=JSON.parse('{"allTagsPath":"/magnum-opus/blog/tags","slug":"facebook","name":"facebook","count":1,"permalink":"/magnum-opus/blog/tags/facebook"}')}}]);

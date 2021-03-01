@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{91:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/magnum-opus/blog/welcome"},{"title":"Hello","permalink":"/magnum-opus/blog/hello-world"},{"title":"Hola","permalink":"/magnum-opus/blog/hola"}]}')}}]);
