@@ -2,14 +2,12 @@ module.exports = {
   title: 'Magnum Opus',
   tagline: 'A site dedicated to the supporting the case for global legalization of all drugs',
   url: 'https://mr-chilly.github.io/magnum-opus/',
-  projectName: 'magnum opus',
+  projectName: 'magnum-opus',
   organizationName: 'mr-chilly',
-  baseUrl: '/',
+  baseUrl: '/magnum-opus/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
- 
   themeConfig: {
     navbar: {
       title: 'My Site',
