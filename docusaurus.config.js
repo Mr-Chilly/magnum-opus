@@ -18,13 +18,19 @@ module.exports = {
       items: [
         {
           to: 'docs/',
-          activeBasePath: 'docs',
+          activeBasePath: 'docs', 
           label: 'Docs',
           position: 'left',
         },
         {
+          to: 'nested/',
+          activeBasePath: 'docs/nesty', 
+          label: 'Double DOcs',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/Mr-Chilly/magnum-opus',
-          label: 'GitHub',
+          label: 'Contribute',
           position: 'right',
         },
       ],
@@ -32,19 +38,6 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Style Guide',
-              to: 'docs/',
-            },
-            {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
-            },
-          ],
-        },
         {
           title: 'Community',
           items: [
@@ -76,15 +69,22 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Magnum Opus.`,
     },
   },
+  plugins: ['docusaurus-plugin-sass'],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+        'docs': {
+          sidebarPath: require.resolve('./docs/nested/sidebars.js'),
+          // Please change this to your repo.
+          editUrl:
+            'https://github.com/facebook/docusaurus/edit/master/website/',
+        },
+        'docs/nesty': {
+          sidebarPath: require.resolve('./docs/nesty/sidebars.js'),
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
@@ -96,7 +96,7 @@ module.exports = {
             'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],
