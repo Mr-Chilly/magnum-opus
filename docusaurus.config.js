@@ -17,15 +17,13 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs', 
-          label: 'Docs',
+          to: 'docs/case-studies',
+          label: 'Case Studies', 
           position: 'left',
         },
         {
-          to: 'nested/',
-          activeBasePath: 'docs/nesty', 
-          label: 'Double DOcs',
+          to: 'docs/media',
+          label: 'Media',
           position: 'left',
         },
         {
@@ -78,13 +76,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         'docs': {
-          sidebarPath: require.resolve('./docs/nested/sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        'docs/nesty': {
-          sidebarPath: require.resolve('./docs/nesty/sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
