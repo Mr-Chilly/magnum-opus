@@ -17,6 +17,7 @@
     "lint.css": "stylelint --fix",
     "lint.md": "markdownlint --fix --ignore node_modules",
     "lint.staged": "lint-staged",
+    "test.commit": "jest src --no-watchman --bail --passWithNoTests",
     "prepare": "husky install"
   },
   "lint-staged": {
