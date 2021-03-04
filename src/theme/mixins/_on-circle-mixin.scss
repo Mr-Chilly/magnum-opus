@@ -1,0 +1,36 @@
+@import '../../../default/theme/utils/rem-size';
+@import '../../../default/theme/utils/sizes';
+
+// By using this mixin you can put the items around a circle
+// circleSize is the main circle where the items will be put on
+// Example is in the weigh-in/mood page for the mood wheel weigh-in-emotion.scss
+
+@mixin on-circle($itemCount, $circleSize, $itemSize) {
+    position: relative;
+    width: $circleSize;
+    height: $circleSize;
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+
+    > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $itemSize;
+        height: $itemSize;
+        margin: -($itemSize / 2);
+
+        $angle: (360 / $itemCount);
+        $rot: -90;
+
+        @for $i from 1 through $itemCount {
+            &:nth-of-type(#{$i}) {
+                transform: rotate($rot * 1deg) translate($circleSize / 2) rotate($rot * -1deg);
+            }
+
+            $rot: $rot + $angle;
+        }
+    }
+}

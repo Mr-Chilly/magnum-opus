@@ -1,0 +1,7 @@
+@mixin hover() {
+    /* stylelint-disable-next-line selector-no-qualifying-type */
+    html.is-mobile &.active,
+    html:not(.is-mobile) &:hover {
+        @content;
+    }
+}

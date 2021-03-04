@@ -1,0 +1,32 @@
+@use './units';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@font-face {
+    font-family: Mandator;
+    src: url('~theme/fonts/Mandator/mandator-webfont.eot');
+    src: url('~theme/fonts/Mandator/mandator-webfont.eot?#iefix') format('embedded-opentype'),
+        url('~theme/fonts/Mandator/mandator-webfont.woff') format('woff'),
+        url('~theme/fonts/Mandator/mandator-webfont.ttf') format('truetype'),
+        url('~theme/fonts/Mandator/mandator-webfont.svg#Mandator') format('svg');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Families
+$font-face-base-family: Open Sans, Helvetica, sans-serif;
+$font-face-vrm-family: Mandator;
+
+// Sizes
+$font-size-base: units.px-to-rem(16);
+$font-size-one: units.px-to-rem(40);
+$font-size-two: units.px-to-rem(32);
+$font-size-three: units.px-to-rem(28);
+$font-size-four: units.px-to-rem(25);
+$font-size-five: units.px-to-rem(16);
+$font-size-six: units.px-to-rem(14);
+$font-size-seven: units.px-to-rem(12);
+
+// Weights
+$font-weight-regular: 400;
+$font-weight-bold: 700;

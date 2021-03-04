@@ -1,0 +1,5 @@
+@use 'theme/units';
+
+$border-radius-md: units.px-to-rem(4);
+$border-radius-lg: units.px-to-rem(8);
+$border-size: units.px-to-rem(1);

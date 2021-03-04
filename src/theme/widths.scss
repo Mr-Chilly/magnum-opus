@@ -1,0 +1,15 @@
+@use 'theme/units';
+
+$xs: units.px-to-rem(320); // 320px
+$sm: units.px-to-rem(768); // 768px
+$md: units.px-to-rem(992); // 992px
+$lg: units.px-to-rem(1024); // 1024px
+$xl: units.px-to-rem(1216); // 1216px
+
+$breakpoints: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+);

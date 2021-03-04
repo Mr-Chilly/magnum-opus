@@ -1,0 +1,79 @@
+/// This is the flexbox grid system.
+/// It will apply annotations to all items from file.
+@import '../variables/breakpoints';
+$gridColumns: 12 !default;
+$gridGutter: $gridGutter !default;
+
+@function get-col-percent($columnNum) {
+    @return $columnNum / $gridColumns * 100%;
+}
+
+@mixin spacing($value, $type: margin) {
+    #{ $type }-left: $value;
+    #{ $type }-right: $value;
+}
+
+%grid-wrapper {
+    @include spacing(-($gridGutter), margin);
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+// Negative margin, to keep the item padding line
+@mixin grid-wrapper($width) {
+    %grid-wrapper {
+        max-width: $width;
+    }
+}
+
+@mixin flex() {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+}
+
+@mixin grid-sizsize($namespace) {
+    // Run the loop for as many columns as speficied.
+    @for $i from 1 through $gridColumns {
+        @if $namespace == 'xs' {
+            %#{$namespace}-#{$i} {
+                @include spacing(($gridGutter / 2), padding);
+                margin-bottom: $gridGutter;
+                flex-basis: get-col-percent($i);
+                max-width: get-col-percent($i);
+                width: 100%;
+            }
+        }
+        @else {
+            %#{$namespace}-#{$i} {
+                @include spacing(($gridGutter), padding);
+                margin-bottom: $gridGutter * 2;
+                flex-basis: get-col-percent($i);
+                max-width: get-col-percent($i);
+            }
+        }
+    }
+
+    @for $i from 1 through $gridColumns {
+        @if ($i != $gridColumns) {
+            %offset-#{$namespace}-#{$i} {
+                margin-left: get-col-percent($i);
+            }
+        }
+    }
+}
+
+// this is the meat and potatoes, we loop the breakpoints
+@each $name, $breakpoint in $gridBreakpoints {
+    @if $name == 'xs' {
+        @include grid-sizsize($name);
+    }
+    @else {
+        @media only screen and (min-width: #{$breakpoint}) {
+            @include grid-sizsize($name);
+            @include grid-wrapper($breakpoint);
+        }
+    }
+}

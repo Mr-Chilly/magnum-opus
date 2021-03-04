@@ -1,0 +1,7 @@
+@use 'theme/colors';
+@use 'theme/units';
+
+@mixin outline() {
+    outline: units.px-to-rem(1) dotted colors.$text-default;
+    outline-offset: units.px-to-rem(-2);
+}

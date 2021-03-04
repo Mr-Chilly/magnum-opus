@@ -1,0 +1,11 @@
+/**
+ * Since Firefox have a different implementation when using the sprite.svg the content needs to be
+ * cloned and put in a svg tag to get the correct styling
+ */
+@mixin svg-content() {
+    @content;
+
+    svg {
+        @content;
+    }
+}

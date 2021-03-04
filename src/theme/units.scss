@@ -1,0 +1,90 @@
+/* This is the only place we have px values */
+/* stylelint-disable unit-whitelist, length-zero-no-unit */
+
+$base-font-size: 16px;
+
+/// Strip the given value
+/// returning the number only.
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+/// Convert to REM
+/// Converts a pixel value to matching REM value. By default, the base pixel value used to calculate
+/// the rem value is taken from the `$base-font-size` variable.
+@function convert-to-rem($value, $baseValue: $base-font-size) {
+    $value: (strip-unit($value) / strip-unit($baseValue)) * 1rem;
+    @if ($value == 0) {
+        $value: 0;
+    }
+    @return $value;
+}
+
+/// REM-SIZE FUNCTION
+/// Converts pixel values into matching REM values. This function can convert more than
+/// one value at once, which is useful when setting multiple values on a `margin` or `padding`
+@function px-to-rem($values, $baseValue: $base-font-size) {
+    $max: length($values);
+
+    @if $max == 1 {
+        @return convert-to-rem(nth($values, 1), $baseValue);
+    }
+
+    $rem-values: ();
+
+    @for $i from 1 through $max {
+        $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $baseValue));
+    }
+    @return $rem-values;
+}
+
+/// This and _sizes are only place we have px values
+/// stylelint-disable unit-whitelist
+$base-spacing-size: 8px;
+
+///  Base spacing multiplier
+///  Multiplies given value with $base-spacing-size
+///  Basically snaps any value to grid.
+///  @param value {number}
+///  @param grid-spacing {number}
+
+@function base-spacing($value, $grid-spacing: $base-spacing-size) {
+    $value: $value * $grid-spacing;
+    @if ($value == 0) {
+        $value: 0;
+    }
+    @return $value;
+}
+
+///
+///  Sizing function
+///  Multiplies one or more values given with $base-spacing-size
+///  Translates return value to REM size.
+///  @param value {number} multiple values allowed
+@function spacing($value) {
+    $max: length($value);
+
+    @if $max == 1 {
+        // Pretty sure this is correct!
+        // scss-lint:disable NameFormat
+        @if type_of($value) != 'number' {
+            @error "please pass a number to spacing()";
+        }
+        @if round($value) != $value {
+            @error "please pass a round number to spacing(). For other sizes, please create a custom size variable";
+        }
+        $grid-spacing: $value * $base-spacing-size;
+        @return px-to-rem($grid-spacing);
+    }
+
+    @if $max > 1 {
+        $grid-spacings: ();
+
+        @for $i from 1 through $max {
+            $grid-spacings: append($grid-spacings, base-spacing(nth($value, $i)));
+        }
+
+        @return px-to-rem($grid-spacings);
+    }
+}

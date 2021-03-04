@@ -1,0 +1,87 @@
+@use './typography';
+@use 'theme/colors';
+@use 'theme/units';
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(colors.$paper-dark, 0);
+    -webkit-font-smoothing: antialiased;
+    font-size: typography.$font-size-base;
+    font-family: typography.$font-face-base-family; // stylelint-disable-line
+    color: colors.$text-default;
+    margin: 0;
+}
+
+#eva-valuation-web-component {
+    -webkit-tap-highlight-color: rgba(colors.$paper-dark, 0);
+    -webkit-font-smoothing: antialiased;
+    font-size: typography.$font-size-base;
+    font-family: typography.$font-face-base-family; // stylelint-disable-line
+    color: colors.$text-default;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em; // stylelint-disable-line
+    background-color: colors.$background-lighter;
+    overflow-y: scroll;
+    // hack for popover
+    // padding-right: 0 !important; // stylelint-disable-line
+}
+
+ul {
+    padding: 0 0 0 units.px-to-rem(18);
+    margin: 0;
+}
+
+a {
+    color: colors.$info;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Default Table Style */
+table {
+    width: 100%;
+    margin: 0 auto;
+    color: colors.$text-default;
+    background: colors.$paper;
+    border: units.px-to-rem(1) solid colors.$border;
+    border-collapse: collapse;
+
+    thead th,
+    tfoot th {
+        text-align: left;
+        color: colors.$text-default;
+        background: colors.$background;
+    }
+    th,
+    td {
+        padding: units.spacing(1);
+        border: units.px-to-rem(1) solid colors.$border;
+    }
+    tbody tr:nth-of-type(odd) {
+        background: colors.$paper;
+    }
+    tbody tr:nth-of-type(even) {
+        background: colors.$background-lighter;
+    }
+}
