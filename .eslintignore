@@ -1,0 +1,12 @@
+/build/**
+/scripts/**
+/node_modules/**
+/.vscode/**
+/env/**
+!.eslintrc.js
+.
+!/src/
+/src/common/workers/lib
+/src/symbiont
+/katalon/**
+/src/**/public/**

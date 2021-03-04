@@ -17,8 +17,18 @@ module.exports = {
       },
       items: [
         {
+          to: 'docs/harm-reduction',
+          label: 'Harm Reduction', 
+          position: 'left',
+        },
+        {
           to: 'docs/case-studies',
           label: 'Case Studies', 
+          position: 'left',
+        },
+        {
+          to: 'docs/economy',
+          label: 'Economy', 
           position: 'left',
         },
         {

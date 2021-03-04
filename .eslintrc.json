@@ -1,0 +1,122 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "extends": [
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:prettier/recommended",
+      "plugin:jest/recommended",
+      "prettier",
+      "prettier/react",
+      "react-app",
+      "react-app/jest",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "jest": true,
+        "es6": true
+    },
+    "globals": {},
+    "plugins": [
+      "react",
+      "jsx-a11y",
+      "babel",
+      "prettier",
+      "simple-import-sort",
+      "@typescript-eslint"
+  ],
+  "rules": {
+    "prettier/prettier": [
+        "error"
+    ],
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-curly-newline": [
+        2,
+        "consistent"
+    ],
+    "react/static-property-placement": [
+        2,
+        "static public field"
+    ],
+    "react/state-in-constructor": 0,
+    "react/no-unescaped-entities": 0,
+    "jsx-a11y/aria-props": 2,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "no-console": 1,
+    "declaration-block-trailing-semicolon": 0,
+    "comma-dangle": 0,
+    "react/prop-types": 0,
+    "curly": [
+        2,
+        "all"
+    ],
+    "require-yield": 1,
+    "camelcase": 0,
+    "@typescript-eslint/camelcase": 0,
+    "import/extensions": 0,
+    "import/no-cycle": [
+        2,
+        {
+            "maxDepth": 1
+        }
+    ],
+    "@typescript-eslint/class-name-casing": "off",
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/sort": [
+        "error",
+        {
+            "groups": [
+                [
+                    "react",
+                    "^[^.]"
+                ],
+                [
+                    "(?<!.\/)common"
+                ],
+                [
+                    "(?<!.\/)components"
+                ],
+                [
+                    "(?<!.\/)eva"
+                ],
+                [
+                    "(?<!.\/)adminUi"
+                ],
+                [
+                    "^\\."
+                ],
+                [
+                    "^.*scss"
+                ]
+            ]
+        }
+    ],
+    // note you must disable the base rule as it can report incorrect errors
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-empty-function": ["warn"],
+    "@typescript-eslint/ban-types": ["warn"],
+    "@typescript-eslint/ban-ts-comment": ["warn"],
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "settings": {
+    "import/resolver": {
+        "typescript": {}
+    }
+  }
+}
